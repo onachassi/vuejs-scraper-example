@@ -1,3 +1,4 @@
+
 # site-scraper-vue
 
 ## Project setup
@@ -27,3 +28,7 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+# vuejs-scraper-example
+Simple VueJs Frontend
+
