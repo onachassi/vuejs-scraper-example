@@ -10,7 +10,7 @@ Vue.directive('click-outside', {
   bind: function(el, binding, vNode) {
     // Provided expression must evaluate to a function.
     if (typeof binding.value !== 'function') {
-    	const compName = vNode.context.name
+      const compName = vNode.context.name
       let warn = `[Vue-click-outside:] provided expression '${binding.expression}' is not a function, but has to be`
       if (compName) { warn += `Found in component '${compName}'` }
 
@@ -20,7 +20,7 @@ Vue.directive('click-outside', {
     const bubble = binding.modifiers.bubble
     const handler = (e) => {
       if (bubble || (!el.contains(e.target) && el !== e.target)) {
-      	binding.value(e)
+        binding.value(e)
       }
     }
     el.__vueClickOutside__ = handler
@@ -29,7 +29,7 @@ Vue.directive('click-outside', {
     document.addEventListener('click', handler)
 		},
 
-  unbind: function(el, binding) {
+  unbind: function(el) {
     // Remove Event Listeners
     document.removeEventListener('click', el.__vueClickOutside__)
     el.__vueClickOutside__ = null
